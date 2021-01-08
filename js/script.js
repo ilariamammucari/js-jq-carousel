@@ -1,8 +1,22 @@
 $(document).ready(function(){
 
   $('.next').click(pulsanteNext); //funzione di callback che parte dopo il click
+
+  // immagini scorrono verso destra con freccetta di destra
+  $('body').keydown(function(e){
+    if (e.keyCode === 39){
+      pulsanteNext();
+    }
+  });
+
   
   $('.prev').click(pulsantePrev);
+  // immagini scorrono verso sinistra con freccetta di sinistra
+  $('body').keydown(function(e){
+    if (e.keyCode === 37){
+      pulsantePrev();
+    }
+  });
 
 
   // cambio l'immagine corrispondente al cliccare sui pallini
