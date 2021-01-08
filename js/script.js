@@ -7,10 +7,16 @@ $(document).ready(function(){
 
   // cambio l'immagine corrispondente al cliccare sui pallini
   $('.nav i').click(function(){
-    $('.nav i.active').removeClass('active');
+    $('.nav i').removeClass('active');
     $(this).addClass('active');
-    $('.images img.active').removeClass('active');
-  }); //da finire.....
+
+
+    //BONUS: .index() senza nulla tra parentesi salva l'indice dell'elemento selezionato e lo metto in una variabile che mi servirà per cercare lo stesso indice per l'immagine, alla quale assegnerò la classe 'active'
+    var indicePallino = $(this).index(); 
+    $('.images img').removeClass('active');
+    $('.images img').eq(indicePallino).addClass('active');
+
+  });
 
 
 });
